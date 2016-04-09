@@ -1,0 +1,26 @@
+<template name="commentsList">
+    {{> commentsForm doc=id docType=docType user=user}}
+    {{#if Template.subscriptionsReady}}
+        {{> comments commentItems=commentItems}}
+    {{else}}
+        {{> loader}}
+    {{/if}}
+</template>
+
+<template name="commentsForm">
+    <div class="ui comments">
+        <div class="comment">
+            <a class="avatar">
+                {{> avatar_small user=user pictureOnly=true}}
+            </a>
+            <div class="content">
+                <a class="author">{{user.username}}</a>
+                {{#autoForm collection='Comments' type='insert' id=doc}}
+                    {{> afQuickField name='docType' value=docType type='hidden'}}
+                    {{> afQuickField name='doc' value=doc type='hidden'}}
+                    {{> afQuickField name='content' rows=2 label=false class='commentbox'}}
+                {{/autoForm}}
+            </div>
+        </div>
+    </div>
+</template>

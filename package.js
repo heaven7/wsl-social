@@ -8,10 +8,14 @@ Package.describe({
 
 var both = ['client','server'],
     packages = [
+        'heaven7:wsl-core@0.0.4',
         'heaven7:wsl-i18n@0.0.3_4',
         'heaven7:wsl-translations@0.0.4',
         'heaven7:wsl-files@0.0.3',
         'heaven7:wsl-settings@0.0.3_1',
+        'heaven7:wsl-permissions@0.0.3',
+        'heaven7:wsl-useraccounts@0.0.4',
+        'heaven7:wsl-theme-semantic-ui@0.0.4_1',
         'jquery',
         'blaze-html-templates',
         'ecmascript',
@@ -24,13 +28,15 @@ Package.onUse(function(api) {
     api.imply(packages)
 
     api.addFiles([
-        'lib/both/collections.js'
+        'lib/both/collections.js',
+        'lib/both/schemas/comments.js'
     ], both)
 
     api.addFiles([
         'lib/client/blocks/templates.html',
         'lib/client/blocks/templates.js',
         'lib/client/comments/templates.html',
+        'lib/client/comments/hooks.js',
         'lib/client/comments/templates.js',
         'lib/client/hearts/templates.html',
         'lib/client/hearts/templates.js',
@@ -48,4 +54,9 @@ Package.onUse(function(api) {
         'lib/server/methods.js',
         'lib/server/publish.js'
     ], 'server')
+
+    api.export([
+        'Comments'
+    ], both)
+
 })
