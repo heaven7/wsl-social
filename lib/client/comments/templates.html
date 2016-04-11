@@ -1,5 +1,5 @@
 <template name="commentsList">
-    {{> commentsForm doc=id docType=docType user=user}}
+    {{> insertCommentForm doc=id docType=docType user=user}}
     {{#if Template.subscriptionsReady}}
         {{> comments commentItems=commentItems}}
     {{else}}
@@ -7,7 +7,7 @@
     {{/if}}
 </template>
 
-<template name="commentsForm">
+<template name="insertCommentForm">
     <div class="ui comments">
         <div class="comment">
             <a class="avatar">
@@ -23,4 +23,13 @@
             </div>
         </div>
     </div>
+</template>
+
+<template name="replyCommentForm">
+        {{#autoForm collection='Comments' type='insert' id='reply-comment-form'}}
+            {{> afQuickField name='parent' value=parent type='hidden'}}
+            {{> afQuickField name='docType' value=docType type='hidden'}}
+            {{> afQuickField name='doc' value=doc type='hidden'}}
+            {{> afQuickField name='content' rows=2 label=false class='commentbox'}}
+        {{/autoForm}}
 </template>
