@@ -40,23 +40,27 @@ Package.onUse(function(api) {
         'lib/client/comments/templates.js',
         'lib/client/hearts/templates.html',
         'lib/client/hearts/templates.js',
+        'lib/client/hearts/hooks.js',
+        'lib/client/hearts/helpers.js',
         'lib/client/ratings/templates.html',
         'lib/client/ratings/templates.js',
         'lib/client/reports/templates.html',
         'lib/client/reports/templates.js',
         'lib/client/views/templates.html',
-        'lib/client/views/templates.js'
+        'lib/client/views/templates.js',
+        'lib/client/api.js'
     ], 'client')
 
 
     api.addFiles([
         'lib/server/allow.js',
-        'lib/server/methods.js',
+        'lib/server/methods/hearts.js',
         'lib/server/publish.js'
     ], 'server')
 
     api.export([
-        'Comments'
+        'Comments',
+        'Social'
     ], both)
 
 })
