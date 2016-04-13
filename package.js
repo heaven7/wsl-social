@@ -33,22 +33,21 @@ Package.onUse(function(api) {
     ], both)
 
     api.addFiles([
+        'lib/client/api.js',
         'lib/client/blocks/templates.html',
         'lib/client/blocks/templates.js',
         'lib/client/comments/templates.html',
         'lib/client/comments/hooks.js',
         'lib/client/comments/templates.js',
-        'lib/client/hearts/templates.html',
-        'lib/client/hearts/templates.js',
-        'lib/client/hearts/hooks.js',
         'lib/client/hearts/helpers.js',
+        'lib/client/hearts/utils.js',
+        'lib/client/hearts/api.js',
         'lib/client/ratings/templates.html',
         'lib/client/ratings/templates.js',
         'lib/client/reports/templates.html',
         'lib/client/reports/templates.js',
         'lib/client/views/templates.html',
-        'lib/client/views/templates.js',
-        'lib/client/api.js'
+        'lib/client/views/templates.js'
     ], 'client')
 
 
