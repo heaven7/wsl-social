@@ -26,7 +26,7 @@
 </template>
 
 <template name='replyCommentForm'>
-        {{#autoForm collection='Comments' type='insert' id='reply-comment-form'}}
+        {{#autoForm collection='Comments' type='method' meteormethod='addComment' id='reply-comment-form'}}
             {{> afQuickField name='parent' value=parent type='hidden'}}
             {{> afQuickField name='docType' value=docType type='hidden'}}
             {{> afQuickField name='doc' value=doc type='hidden'}}
