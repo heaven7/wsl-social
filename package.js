@@ -36,8 +36,10 @@ Package.onUse(function(api) {
         'lib/client/api.js',
         'lib/client/blocks/templates.html',
         'lib/client/blocks/templates.js',
+        'lib/client/comments/helpers.js',
+        'lib/client/comments/utils.js',
+        'lib/client/comments/api.js',
         'lib/client/comments/templates.html',
-        'lib/client/comments/hooks.js',
         'lib/client/comments/templates.js',
         'lib/client/hearts/helpers.js',
         'lib/client/hearts/utils.js',
@@ -52,8 +54,8 @@ Package.onUse(function(api) {
 
 
     api.addFiles([
-        'lib/server/allow.js',
         'lib/server/methods/hearts.js',
+        'lib/server/methods/comments.js',
         'lib/server/publish.js'
     ], 'server')
 

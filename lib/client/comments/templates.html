@@ -1,4 +1,4 @@
-<template name="commentsList">
+<template name='commentsList'>
     {{> insertCommentForm doc=id docType=docType user=user}}
     {{#if Template.subscriptionsReady}}
         {{> comments commentItems=commentItems}}
@@ -7,15 +7,15 @@
     {{/if}}
 </template>
 
-<template name="insertCommentForm">
-    <div class="ui comments">
-        <div class="comment">
-            <a class="avatar">
+<template name='insertCommentForm'>
+    <div class='ui comments'>
+        <div class='comment'>
+            <a class='avatar'>
                 {{> avatar_small user=user pictureOnly=true}}
             </a>
-            <div class="content">
-                <a class="author">{{user.username}}</a>
-                {{#autoForm collection='Comments' type='insert' id=doc}}
+            <div class='content'>
+                <a class='author'>{{user.username}}</a>
+                {{#autoForm collection='Comments' type='method' meteormethod='addComment' id=doc}}
                     {{> afQuickField name='docType' value=docType type='hidden'}}
                     {{> afQuickField name='doc' value=doc type='hidden'}}
                     {{> afQuickField name='content' rows=2 label=false class='commentbox'}}
@@ -25,7 +25,7 @@
     </div>
 </template>
 
-<template name="replyCommentForm">
+<template name='replyCommentForm'>
         {{#autoForm collection='Comments' type='insert' id='reply-comment-form'}}
             {{> afQuickField name='parent' value=parent type='hidden'}}
             {{> afQuickField name='docType' value=docType type='hidden'}}
