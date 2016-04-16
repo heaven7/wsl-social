@@ -44,6 +44,8 @@ Package.onUse(function(api) {
         'lib/client/hearts/helpers.js',
         'lib/client/hearts/utils.js',
         'lib/client/hearts/api.js',
+        'lib/client/hearts/templates.html',
+        'lib/client/hearts/templates.js',
         'lib/client/ratings/templates.html',
         'lib/client/ratings/templates.js',
         'lib/client/reports/templates.html',

@@ -1,0 +1,7 @@
+<template name='heartComment'>
+    {{#if isHeartedByUser id 'Comments' currentUserId}}
+        <a class='heart-action'>{{heartsCount id}}&nbsp;{{>icon icon='heart red link small'}}</a>
+    {{else}}
+        <a class='heart-action'>{{heartsCount id}}&nbsp;{{>icon icon='heart red outline link small'}}</a>
+    {{/if}}
+</template>
