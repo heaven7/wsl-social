@@ -34,8 +34,9 @@ Package.onUse(function(api) {
 
     api.addFiles([
         'lib/client/api.js',
-        'lib/client/blocks/templates.html',
-        'lib/client/blocks/templates.js',
+        'lib/client/blocks/utils.js',
+        'lib/client/blocks/api.js',
+        'lib/client/blocks/collection.js',
         'lib/client/comments/helpers.js',
         'lib/client/comments/utils.js',
         'lib/client/comments/api.js',
@@ -56,13 +57,16 @@ Package.onUse(function(api) {
 
 
     api.addFiles([
-        'lib/server/methods/hearts.js',
+        'lib/server/methods/blocks.js',
         'lib/server/methods/comments.js',
+        'lib/server/methods/hearts.js',
         'lib/server/publish.js'
     ], 'server')
 
     api.export([
+        'Blocks',
         'Comments',
+        'Hearts',
         'Social'
     ], both)
 
